@@ -1,22 +1,23 @@
 .blog-card{
-    background-color:rgb(214, 212, 210);
+    background-color: rgb(243, 226, 194);
     cursor: pointer;
-    padding: 10px;
+    padding: 15px;
     text-decoration: none;
     color: black;
     margin: 10px;
-    width: 350px;
-    border-radius: 10px;
+    width: 400px;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 2px solid rgba(0,0,0,0.1);
 }
 .blog-card:hover{
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 
 }
 .blog-title{
-   font-size: 30px;
+   font-size: 25px;
    margin-top: 10px;
+   text-align: center;
 }
 .blog-content-preview{
     font-size: 20px;
@@ -28,10 +29,10 @@
    
     height: 250px;
     width: 280px;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-top: 20px;
-    margin-left: 35px;
-   
+    margin-left: 10px;
+
    
 }
 .author-name{
@@ -52,13 +53,4 @@
 }
 .author-price{
     font-size: 20px;
-}
-.category-badge{
-    /* background-color:rgb(246, 196, 135); */
-    background-color:rgb(53, 52, 52);
-    color:azure;
-    padding: 5px 6px;
-   
-    margin: 5px;
-    border-radius: 20px;
 }

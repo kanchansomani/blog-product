@@ -1,72 +1,56 @@
 const blogs = [
-    {
-      id:"1",
-      title:"Chocolate Icecream",
-      content:"Chocolate ice cream is ice cream with natural or artificial chocolate flavoring. One of the oldest flavors of ice creams, it is also one of the world's most popular. While most often sold alone, it is also a base for many other flavors.",
-       author:{
-        name:"Rutuja More",
-        avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGCPcNK_qIDyF78Ivbxj7GSOqvFXbMI5QBnw&s"
-      },
-      price:"90"
+  {
+    id: "1",
+    title: "Mango Icecream",
+    content: "Naturals Mango Ice-cream is a popular and delicious dessert made with fresh mangoes, cream, and sugar. It's a seasonal flavor offered by Naturals, a well-known Indian ice cream brand. The ice cream features a smooth and creamy texture, with a vibrant yellow color and an intense mango flavor. The sweetness is balanced, allowing the natural taste of the mangoes to shine through. With no artificial flavors or preservatives, Naturals Mango Ice-cream is a refreshing and indulgent treat perfect for hot summer days or any time you crave a taste of tropical bliss.",
+    author: {
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXaFfBZbbGBYDI6jzR8b_vFlskyi7aSHhvNQ&s"
+    }
+  },
+  {
+    id: "2",
+    title: "Custard Apple Icecream",
+    content: "Naturals Custard Apple Ice-cream is a unique and exotic dessert that showcases the sweet and creamy flavor of custard apples. This innovative flavor, offered by Naturals, captures the essence of fresh custard apples, with a smooth and creamy texture that's both refreshing and indulgent. The ice cream has a sweet and slightly tangy taste, with hints of tropical fruitiness that's characteristic of custard apples. The flavor is balanced and nuanced, with no artificial notes or preservatives. With its distinctive taste and creamy texture, Naturals Custard Apple Ice-cream is a must-try for adventurous foodies and anyone looking to experience the authentic taste of India's favorite seasonal fruit. It's a sweet and creamy escape in every scoop!",
+    author: {
+      avatar: "https://naturalicecreams.in/wp-content/uploads/2023/11/500GM_Ice-Cream-Container_Sitaphal_Lid-300x300.jpg"
+    }
+  },
+  {
+    id: "3",
+    title: "Choco Chips Icecream",
+    content: "Naturals Chocochips Ice-cream is a decadent and indulgent dessert that combines the richness of chocolate with the creaminess of ice cream. This classic flavor, offered by Naturals, features a smooth and velvety texture with a deep brown color and a generous sprinkling of dark chocolate chips throughout. The ice cream has a bold and intense chocolate flavor, made with high-quality cocoa, while the chocolate chips add a delightful crunch and a burst of extra chocolatey goodness. With a perfect balance of flavors and textures, Naturals Chocochips Ice-cream is a treat for chocolate lovers of all ages. It's a comforting and indulgent dessert that's perfect for satisfying your sweet tooth and leaving you feeling satisfied and content.",
+    author: {
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBKOzxSkAhD5ezD4gHyuEcVZZsU39keAbq9g&s"
+    }
+  },
+  {
+    id: "4",
+    title: "Blueberry Icecream",
+    content: "Naturals Blueberry Ice-cream is a sweet and tangy dessert that captures the essence of fresh blueberries. This refreshing flavor, offered by Naturals, features a smooth and creamy texture with a beautiful purple hue and a sweet-tart taste that's both refreshing and indulgent. The blueberry flavor is intense and fruity, with a hint of sweetness that's balanced by a touch of tartness. The ice cream is made with real blueberries, giving it a deep purple color and a flavor that's both authentic and delicious. With no artificial flavors or preservatives, Naturals Blueberry Ice-cream is a perfect treat for hot summer days or any time you crave a sweet and refreshing dessert. It's a sweet escape in every scoop!",
+    author: {
+
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRboJ9-uQP_PnCQ4mwS9nG4US9ggJMJ3_SlKQ&s"
+    }
+  },
+  {
+    id: "5",
+    title: "Malai Icecream",
+    content: "Naturals Malai Ice-cream is a rich and creamy dessert that showcases the traditional Indian flavor of malai, or clotted cream. This decadent flavor, offered by Naturals, features a smooth and velvety texture with a sweet and slightly caramelized flavor, reminiscent of freshly made malai. The ice cream has a deep cream color and a luxurious feel, with a sweetness that's balanced by a hint of tanginess. The malai flavor is authentic and intense, making it a perfect treat for those who love traditional Indian sweets. With no artificial flavors or preservatives, Naturals Malai Ice-cream is a indulgent dessert that's perfect for special occasions or everyday indulgence. It's a creamy and dreamy treat that will transport you to the streets of India with every scoop.",
+    author: {
+
+      avatar: "data:image/jpeg;base64,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"
+    }
+  },
+  {
+    id: "6",
+    title: "Pineapple Cherry Icecream",
+    content: "Naturals Pineapple Ice-cream is a tropical and refreshing dessert that captures the sweet and tangy flavor of fresh pineapples. This vibrant flavor, offered by Naturals, features a smooth and creamy texture with a bright yellow color and a sweet-tart taste that's both revitalizing and indulgent. The pineapple flavor is intense and fruity, with a hint of tropical sweetness that's balanced by a touch of acidity. The ice cream is made with real pineapple puree, giving it a deep pineapple flavor and a refreshing twist. With no artificial flavors or preservatives, Naturals Pineapple Ice-cream is a perfect treat for hot summer days or any time you crave a sweet and tangy dessert. It's a tropical getaway in every scoop!",
+    author: {
      
-     
-    },
-    {
-      id:"2",
-        title:"ButterScotch Icecream",
-        content:"All you need is some heavy cream and a premade can of sweetened condensed milk. Simply whip some heavy cream, combine it with the condensed milk and homemade sauce, and in a few hours you'll have perfect low-effort butterscotch ice cream. I began to realize the complete overwhelm of my digital footprint. I have 8 calendars, 3 of which don't like to play well with other platforms, a CRM, a project management app, all my socials, Slack, and a few more CRMish-type apps for invoicing…the list goes on. I'm sure I am missing one.",
-        author:{
-          name:"Rutuja More",
-          avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbx3uF2eAxPL4pgUFI8A6evg2_KM9eKQ_Y0Q&s"
-        },
-        price:"90"
-       
-      },
-      {
-        id:"4",
-        title:"Pista Icecream",
-        content:"Good pistachio ice-cream is creamy, nutty and kinda buttery. It's the sort of ice-cream which you should try to eat on its own, without any toppings. Just a small serving, and take your time. Its flavour is both rich and delicate, and you don't want extra toppings to interfere with that. I began to realize the complete overwhelm of my digital footprint. I have 8 calendars, 3 of which don't like to play well with other platforms, a CRM, a project management app, all my socials, Slack, and a few more CRMish-type apps for invoicing…the list goes on. I'm sure I am missing one.",
-        author:{
-          name:"Rutuja More",
-          avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKH_mXxmH6UbL3VdOW081GPsU_8x0SSoE2AQ&s"
-        },
-        price:"90"
-     
-      },
-      {
-        id:"3",
-        title:"Vannila Icecream",
-        content:"Vanilla is frequently used to flavor ice cream, especially in North America, Asia, and Europe. Vanilla ice cream, like other flavors of ice cream, was originally created by cooling a mixture made of cream, sugar, and vanilla above a container of ice and salt.",
-        author:{
-          name:"Rutuja More",
-          avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuo3HjQXrSvIIPQX5cPQdHqX_tYIorUp4vfw&s"
-        },
-        price:"90"
-       
-      },
-    
-      {
-        id:"5",
-        title:"Mango Icecream",
-        content:"A conventional Mango ice cream is made with heavy cream, sugar, milk, eggs and mangoes or flavorings. It is a custard based ice cream which is churned to get an airy and light texture.I began to realize the complete overwhelm of my digital footprint. I have 8 calendars, 3 of which don't like to play well with other platforms, a CRM, a project management app, all my socials, Slack, and a few more CRMish-type apps for invoicing…the list goes on. I'm sure I am missing one.",
-        author:{
-          name:"Rutuja More",
-          avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3a31L06n2LqT6QEEN8Aic5afb3xkEtX9ikAls_J5qT41VffU_Q1vCYJNSFC9Hu0Aqp7g&usqp=CAU"
-        },
-        price:"90"
-        
-      },
-      {
-        id:"6",
-        title:"Strawberry Icecream",
-        content:"Strawberry ice cream is a flavor of ice cream made with strawberry or strawberry flavoring. It is made by blending in fresh strawberries or strawberry flavoring with the eggs, cream, vanilla, and sugar used to make ice cream. Most strawberry ice cream is colored pink or light red.I have 8 calendars, 3 of which don't like to play well with other platforms, a CRM, a project management app, all my socials, Slack, and a few more CRMish-type apps for invoicing…the list goes on. I'm sure I am missing one.",
-        author:{
-          name:"Rutuja More",
-          avatar:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYmvAr0WywUzCZj7qex1zQu2k7BVfd9iIxlp5Z53nYh8zm3rX_ekozk7jHVrTvWkoMHP4&usqp=CAU"
-        },
-        price:"90"
-       
-      },
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR85RFKYznH5NI9pZVqej76NV943IqmhZbsAQ&s"
+    }
+
+  },
 ]
 
 export default blogs
